@@ -1,4 +1,5 @@
 <?php
+set_time_limit(0);
 	$template = "/^Hello World, this is [\w\s]+ with HNGi7 ID HNG-\d{1,} using \w.* for stage 2 task/";
 	$idRegex = "/(HNG[-{0,}][\d]+)/";
 	$emailRegex = "/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/i";
@@ -199,7 +200,7 @@
 									if (preg_match($template, $output, $matches)) {
 										$item["status"] = "pass";
 										$item["output"] = $matches[0];
-										$passCount++;
+										
 									} else {
 										$item["status"] = "fail";
 										$item["output"] = $output;
